@@ -7,5 +7,7 @@ name=$(echo "$name" | sed 's/(/\\(/g')
 name=$(echo "$name" | sed 's/\]/\\\]/g')
 name=$(echo "$name" | sed 's/\[/\\\[/g')
 name=$(echo "$name" | sed 's/\&/\\&/g')
+name=$(echo "$name" | sed 's/\|&/\\|/g')
+name=$(echo "$name" | sed "s/\'/\\'/g")
 eval "dir2ogg $name"
 eval "rm $name"
